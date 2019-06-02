@@ -6,10 +6,8 @@ import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -39,7 +37,7 @@ public class AddNewNoteActivity extends AppCompatActivity {
 
         mItem = new Item();
         imageViewEdit = (ImageView) findViewById(R.id. imageViewEdit);
-        editTextTitle = (EditText) findViewById(R.id.editTextTitle);
+        editTextTitle = (EditText) findViewById(R.id.paintView);
         description  = (EditText) findViewById(R.id.description);
 
 
@@ -112,7 +110,7 @@ public class AddNewNoteActivity extends AppCompatActivity {
 
 
         //adds new note
-        floatingActionButtonAddNote = (FloatingActionButton) findViewById(R.id.floatingActionButtonAddNote);
+        floatingActionButtonAddNote = (FloatingActionButton) findViewById(R.id.floatingActionButtonAddPaint);
         floatingActionButtonAddNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

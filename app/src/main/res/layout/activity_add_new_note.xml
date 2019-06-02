@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/editTextTitle"
+            android:id="@+id/paintView"
             android:layout_width="match_parent"
             android:layout_height="84dp"
             android:ems="10"
@@ -48,7 +48,7 @@
         android:layout_height="match_parent">
 
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/floatingActionButtonAddNote"
+            android:id="@+id/floatingActionButtonAddPaint"
             android:layout_width="57dp"
             android:layout_height="56dp"
             android:layout_marginStart="8dp"

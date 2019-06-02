@@ -5,9 +5,13 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.support.design.widget.FloatingActionButton;
+import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 public class PaintView extends View {
 
@@ -15,15 +19,26 @@ public class PaintView extends View {
     private android.graphics.Path path = new Path();
     private Paint brush = new Paint();
 
+    Paint myPaint;
+    FloatingActionButton floatingActionButtonAddPaint;
 
-    public PaintView(Context context) {
-        super(context);
+
+
+
+    public PaintView(Context context,  AttributeSet attrs) {
+        super(context, attrs);
+
+        myPaint = new Paint();
 
         brush.setAntiAlias(true);
         brush.setColor(Color.MAGENTA);
         brush.setStyle(Paint.Style.STROKE);
         brush.setStrokeJoin(Paint.Join.ROUND);
         brush.setStrokeWidth(8f);
+
+
+
+
 
         layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
     }
@@ -54,6 +69,13 @@ public class PaintView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         canvas.drawPath(path, brush);
+
+       //canvas.drawCircle(400,250, 100, myPaint);
+
+
+
+
+
 
     }
 }

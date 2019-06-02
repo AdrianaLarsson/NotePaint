@@ -1,9 +1,7 @@
 package com.example.drawyourownnote;
 
-import android.animation.FloatArrayEvaluator;
 import android.content.Intent;
 import android.net.Uri;
-import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,7 +16,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        editTextTitle = (EditText) findViewById(R.id.editTextTitle);
+        editTextTitle = (EditText) findViewById(R.id.paintView);
         // when user clicks on floatbutton paint, it comes to paint activity
         floatingActionButtonPaint = (FloatingActionButton) findViewById(R.id.floatingActionButtonPaint);
 
