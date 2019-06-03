@@ -1,11 +1,13 @@
 package com.example.drawyourownnote;
 
+import android.graphics.Canvas;
 import android.net.Uri;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.Serializable;
+
 
 public class Item implements Serializable {
 
@@ -37,7 +39,7 @@ public class Item implements Serializable {
 
     public void  setTitle(String mTitle){
 
-       this.mTitle = mTitle;
+        this.mTitle = mTitle;
     }
 
     public String getmDescription()

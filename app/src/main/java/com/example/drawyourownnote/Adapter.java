@@ -2,17 +2,21 @@ package com.example.drawyourownnote;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Canvas;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
+
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ListItemHolder> {
 
@@ -33,6 +37,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ListItemHolder> {
     @NonNull
     @Override
     public Adapter.ListItemHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        //set
 
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_item, viewGroup, false);
 

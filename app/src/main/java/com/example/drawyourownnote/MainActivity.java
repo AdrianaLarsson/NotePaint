@@ -1,5 +1,6 @@
 package com.example.drawyourownnote;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
@@ -11,11 +12,16 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewTreeObserver;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(v.getContext(), AddNewPaintActivity.class);
+                intent.putExtra("items",itemArrayList);
                 startActivityForResult(intent, -1);
 
             }
@@ -86,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         mAdapter = new Adapter(MainActivity.this, itemArrayList);
         Log.e("Set Up Recycler View", "Sets Up The Recyclerview: " + itemArrayList.size());
-       mLayoutManager =
+        mLayoutManager =
                 new LinearLayoutManager(getApplicationContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());

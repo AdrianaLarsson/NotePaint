@@ -10,10 +10,20 @@ import java.io.ByteArrayOutputStream;
 
 //converts the images to string so you can save it on json file
 
+
+
 public class Utile {
 
     public static String convertImageToString(Drawable drawable){
         Bitmap bitmap = ((BitmapDrawable)drawable).getBitmap();
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 10, baos); //bm is the bitmap object
+        byte[] byteArrayImage = baos.toByteArray();
+        String encodedImage = Base64.encodeToString(byteArrayImage, Base64.DEFAULT);
+        return  encodedImage;
+    }
+
+    public static String convertBitmapToString(Bitmap bitmap){
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 10, baos); //bm is the bitmap object
         byte[] byteArrayImage = baos.toByteArray();

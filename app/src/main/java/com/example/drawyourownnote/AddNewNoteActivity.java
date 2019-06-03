@@ -1,6 +1,7 @@
 package com.example.drawyourownnote;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
@@ -13,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
 
 public class AddNewNoteActivity extends AppCompatActivity {
 
@@ -90,10 +92,10 @@ public class AddNewNoteActivity extends AppCompatActivity {
             Log.e("new item initialized ","item not received!");
         }
 
-            String titleItemToAdd = editTextTitle.getText().toString();
-            String descriptionItemToAddD = description.getText().toString();
-            mItem.setTitle(titleItemToAdd);
-            mItem.setDescription(descriptionItemToAddD);
+        String titleItemToAdd = editTextTitle.getText().toString();
+        String descriptionItemToAddD = description.getText().toString();
+        mItem.setTitle(titleItemToAdd);
+        mItem.setDescription(descriptionItemToAddD);
 
 
         //picks the image from libary
@@ -115,13 +117,13 @@ public class AddNewNoteActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                   String titleItemToAdd = editTextTitle.getText().toString();
-                   String decriptionItemToAdd = description.getText().toString();
-                   String image = Utile.convertImageToString(imageViewEdit.getDrawable());
-                   System.out.println(decriptionItemToAdd + " ");
-                   mItem.setTitle(titleItemToAdd);
-                   mItem.setImage(image);
-                   mItem.setDescription(decriptionItemToAdd);
+                String titleItemToAdd = editTextTitle.getText().toString();
+                String decriptionItemToAdd = description.getText().toString();
+                String image = Utile.convertImageToString(imageViewEdit.getDrawable());
+                System.out.println(decriptionItemToAdd + " ");
+                mItem.setTitle(titleItemToAdd);
+                mItem.setImage(image);
+                mItem.setDescription(decriptionItemToAdd);
 
 
                 if (isExistingItem) {
@@ -137,9 +139,9 @@ public class AddNewNoteActivity extends AppCompatActivity {
 
 
 
-                    saveItems();
-                    Log.d("Description", "onClick: item is going to be saved!");
-                    finish();
+                saveItems();
+                Log.d("Description", "onClick: item is going to be saved!");
+                finish();
 
             }
 
